@@ -44,12 +44,18 @@
 
 /* Code: */
 #pragma once
+#include "Semaphore.h"
 class Barrier{
-  int numThreads;
+  int count = 0;
+  int numThreads = 0;
  public:
   Barrier(int numThreads);
   virtual ~Barrier();
-  void wait();  
+  void wait();
+  std::shared_ptr<Semaphore> sem1;
+  std::shared_ptr<Semaphore> sem2;
+  std::shared_ptr<Semaphore> mutex;
+  
 };
 
 

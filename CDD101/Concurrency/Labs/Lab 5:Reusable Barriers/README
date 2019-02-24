@@ -1,10 +1,32 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+README for Lab 5: Reusable Barrier
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+The purpose of this project is to learn and demonstrate the use of a reusable barrier. A barrier is used when you have a point in code at which all threads in a program need to reach before any threads can progress. The barrier ensures all threads have reached a point before they can process. This is done by using a variable that is shared across all threads and has mutual exclusion to ensure only one thread can interact with the variable at once, when this variable equals the number of thread it indcates all thread have reached the wait point, once this happens the final thread signals to let the rest of the threads pass through the barrier  
+
+All threads increase the count and then wait in sem1, when the last thread enters the if it hits sem2.wait and the sem1.signal which alows the to leave sem1.wait one at a time which then hit sem1.signal this cause all thread to be released from the wait one by one and signaling the next thread as they go. the threads then hit a mutex surrounding a count that is decremented when count reaches all threads are stoped at another wait. when the last thread decrements count it signals to release the rest of the threads.
+
+
+LICENSE:
+The project license for the project is the GNU PUBLIC LICENSE. A copy of which id in the project folder and called "LICENCE".
+
+Authors:
+Darran Gahan
+
+FIles:
+
+main.cpp:
+	Contains the main function for the project and is where the rendezvous occurs. 
+
+Semaphore.h:
+	Contains all the information pertaining to the Semaphore class.
+
+Semaphore.cpp:
+	Containg the implementation for the Semaphore class.
+
+Barrier.h:
+	Contains all the information pertaining to the barrier class.
+
+Barrier.cpp:
+	Contains all the implementation for the barrier class. 
+
+Makefile:
+	Contains the compile information to build the project. This is the file you will call when you want to compile the project, you do this by typing "make" in the terminal from within the the project folder. When compiled the program name is "reusableBarrier" and can be run by typing "./reusableBarrier" in termimnal from within the project folder.

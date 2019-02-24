@@ -44,9 +44,50 @@
 // 
 
 // Code:
-#include "Semaphore.h"
+//#include "Semaphore.h"
 #include "Barrier.h"
 
+
+Barrier::Barrier(int numThreads){
+
+  this->numThreads = numThreads;
+  sem1 = std::shared_ptr<Semaphore>(new Semaphore(0));
+  sem2 = std::shared_ptr<Semaphore>(new Semaphore(1));
+  mutex = std::shared_ptr<Semaphore>(new Semaphore(1));
+}
+
+
+Barrier::~Barrier(){};
+
+void Barrier::wait(){
+
+  mutex->Wait();
+  count++;
+
+  if (count == numThreads){
+    sem2->Wait();
+    sem1->Signal();
+   }
+
+  mutex->Signal();
+
+  sem1->Wait();
+  sem1->Signal();
+
+  mutex->Wait();
+  count--;
+
+  if (count == 0){
+    sem1->Wait();
+    sem2->Signal();
+  }
+
+  mutex->Signal();
+
+  sem2->Wait();
+  sem2->Signal();
+}
+    
 
 // 
 // Barrier.cpp ends here
