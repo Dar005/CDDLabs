@@ -1,10 +1,24 @@
-The README file is a text filw that explains what a project is.
-It should contain information on
+README for Lab 3: Rendezvous.
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+The purpose of this projec t is to learn about and solve the thread Rnndezvous.
+Two treads must both reach a certain point before either can proceed, before the code is altered both threads start and finish independent of each other and after the code altered the both threads will wait at a certain point until the other arrives before it can proceed. This is done through the use of two semaphores. When the two threads are started thread 1 calls signal() on semaphore 1 and then calls wait() on semaphore 2, thread 2 calls Signal() on semaphore 2 and Wait() on semaphore 1.
+
+LICENSE:
+The project license for the project is the GNU PUBLIC LICENSE. A copy of which id in the project folder and called "LICENCE".
+
+Authors:
+Darran Gahan
+
+FIles:
+
+main.cpp:
+	Contains the main function for the project and is where the rendezvous occurs. 
+
+Semaphore.h:
+	Contains all the information pertaining to the Semaphore class.
+
+Semaphore.cpp:
+	Containg the implementation for the Semaphore class.
+
+Makefile:
+	Contains the compile information to build the project. This is the file you will call 		when you want to compile the project, you do this by typing "make" in the terminal 		from within the the project folder. When compiled the program name is "rendezvous" 		and can be run by typing "./rebdezvous" in termimnal from within the project folder.
