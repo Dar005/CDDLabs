@@ -1,10 +1,25 @@
-The README file is a text filw that explains what a project is.
-It should contain information on
+README for lab 2:Semaphores.
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+The purpose of this project is to learn about the use of Semaphores.
+Before the code has been altered two thread run, thread 1 and thread 2 these thread output in the wrong order i.e. thread 2 before thread 1. In this lab you use a semaphore to ensure that that thread 1 runs and finishes before thread2 two finishes. This is done by placing a Signal() at the end of the first task (thread 1) and a Wait() at the start of the second task (thread 2). 
+
+License:
+The Project Licence is the GNU GENERAL PUBLIC LICENSE. A copy of the of which is in the project folder named "LICENSE". 
+
+Autors: 
+Darran Gahan
+
+Files:
+
+main.cpp:
+	Contains the main function for the project i.e. the section that runs the project.
+
+Semaphore.h:
+	Contains all the information pertaining to the Semaphore class.
+
+Semaphore.cpp:
+	Containg the implementation for the Semaphore class.
+
+Makefile:
+	Contains the compile information for the building the project. This is the file 	you will call when you want to compile the project by typing "make" in terminal 
+	within the folder. When compiled the program name is "signal" and can be run by 	typing "./signal" in terminal within the project folder.
