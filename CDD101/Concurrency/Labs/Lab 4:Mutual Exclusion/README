@@ -1,10 +1,23 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+README for Lab 4: Mutual EXclusion
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+The purpose of this project is to learn about and solve a mutual exclusion problem of thread sharing a variable. Only one thread can access and update the shared variable at a time. If only onw thread can access the shared variable at a time then the count for the shared variable should be 100000, if mutual exclusion is not achieved the count will be wrong, usually less that 100000 (in some cases it may reach 100000 but it will never be consistent). TO solve the problem a semophore is initialised to 1 and a Wait() is called before the for loop and a Signal() after this should ensure that ony one thread accesses the for loop containing the shared variable and in ture only one thread can udate it at a time thus ensuring mutual exclusion. 
+
+LICENSE:
+The project license for the project is the GNU PUBLIC LICENSE. A copy of which id in the project folder and called "LICENCE".
+
+Authors:
+Darran Gahan
+
+FIles:
+
+main.cpp:
+	Contains the main function for the project and is where the rendezvous occurs. 
+
+Semaphore.h:
+	Contains all the information pertaining to the Semaphore class.
+
+Semaphore.cpp:
+	Containg the implementation for the Semaphore class.
+
+Makefile:
+	Contains the compile information to build the project. This is the file you will call 		when you want to compile the project, you do this by typing "make" in the terminal 		from within the the project folder. When compiled the program name is 		"mutualExclusion" and can be run by typing "./mutualExclusion" in termimnal from 		within the project folder.
