@@ -1,10 +1,33 @@
-The README file is a text file that explains what a project is.
-It should contain information on
+The project was created to demonstrate the use of Producer Comsumer and a safebuffer. It works by allowwing the producer to add items to the buffer which can then be "consumed" by the consumer. The producer can only add to a buffer that is not full and a consumer can only remove item from the safe buffer if there are item in the buffer.
 
-1. Project Licence
-2. Authors of Project
-3. How to install project
-4. List of any required Libraries, platform issues, etc.
-5. TO DO section listing items that need to be completed (errors, missing features etc.)
-6. List of files and what they contain
-7. Any other relevent information
+LICENSE:
+The project license for the project is the GNU PUBLIC LICENSE. A copy of which id in the project folder and called "LICENCE".
+
+Authors:
+Darran Gahan
+
+FIles:
+
+main.cpp:
+	Contains the main function for the project and in which the code is executed, alos contain the implemntation for the producer and consumer function.
+
+Semaphore.h:
+	Contains all the information pertaining to the Semaphore class.
+
+Semaphore.cpp:
+	Containg the implementation for the Semaphore class.
+
+Barrier.h:
+	Contains all the information pertaining to the barrier class.
+
+Barrier.cpp:
+	Contains all the implementation for the barrier class. 
+
+SafeBufer.h:
+	Contains all the information pertaining to the SafeBuffer class
+		
+Safebuffer.cpp: 
+	Contains all the implementatio for a SafeBuffer class
+
+Makefile:
+	Contains the compile information to build the project. This is the file you will call when you want to compile the project, you do this by typing "make" in the terminal from within the the project folder. When compiled the program name is "prodCon" and can be run by typing "./prodCon" in termimnal from within the project folder.

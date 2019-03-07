@@ -44,7 +44,14 @@
 // 
 
 // Code:
-//#include "Semaphore.h"
+
+/*! \class Barrier
+    \brief A reusable barrier Implementation
+    
+   Uses C++11 features such as mutex and condition variables to implement Semaphore
+
+*/
+
 #include "Barrier.h"
 
 
@@ -59,6 +66,9 @@ Barrier::Barrier(int numThreads){
 
 Barrier::~Barrier(){};
 
+/*! \fn Wait
+    \brief an example of a reusable barrier
+*/
 void Barrier::wait(){
 
   mutex->Wait();

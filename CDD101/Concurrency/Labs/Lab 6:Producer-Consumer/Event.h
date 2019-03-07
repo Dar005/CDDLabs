@@ -43,6 +43,16 @@
  */
 
 /* Code: */
+// pragma once means include and compile once 
+#pragma once
+class Event{
+ private:
+  char eric;
+ public:
+  Event();
+  bool consume();
+};
+
 
 
 
